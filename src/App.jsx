@@ -6,6 +6,7 @@ import Productos from './pages/Productos'
 import Categorias from './pages/Categorias.jsx'
 import ProductoDetalle from './pages/ProductoDetalle'
 import Contacto from './pages/Contacto'
+import Checkout from './pages/Checkout'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="productos/:categoria" element={<Productos />} />
         <Route path="producto/:idProducto" element={<ProductoDetalle />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="checkout" element={<Checkout />} />
       </Route>
     </Routes>
   )

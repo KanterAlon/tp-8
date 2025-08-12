@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import CartWidget from './CartWidget'
 
 function Navbar() {
   const [categories, setCategories] = useState([])
@@ -25,21 +26,20 @@ function Navbar() {
           <li>
             Productos
             <ul className="dropdown">
-              {}
               <li key="all">
                 <Link to="/productos">Ver todos</Link>
               </li>
-              {}
               {categories.map(cat => (
                 <li key={cat.slug}>
-                  <Link to={`/productos/${cat.slug}`}>
-                    {cat.name}
-                  </Link>
+                  <Link to={`/productos/${cat.slug}`}>{cat.name}</Link>
                 </li>
               ))}
             </ul>
           </li>
           <li><Link to="/contacto">Contacto</Link></li>
+          <li className="cart-nav">
+            <CartWidget />
+          </li>
         </ul>
       </nav>
     </header>
