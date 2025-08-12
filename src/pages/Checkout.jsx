@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext.jsx'
 import { useToast } from '../context/ToastContext.jsx'
+import CartItemList from '../components/CartItemList.jsx'
 import './Checkout.css'
 
 function Checkout() {
@@ -31,18 +32,16 @@ function Checkout() {
         <p>No hay productos en el carrito.</p>
       ) : (
         <>
-          <ul className="checkout-list">
-            {cartItems.map(item => (
-              <li key={item.id}>
-                <span>{item.title} x {item.quantity}</span>
-                <span>${item.price * item.quantity}</span>
-              </li>
-            ))}
-          </ul>
+          <CartItemList />
           <p className="checkout-total">Total: {totalFormat}</p>
-          <button className="btn-checkout" onClick={handleFinish}>
-            Finalizar compra
-          </button>
+          <div className="cart-actions">
+            <button className="add-btn" onClick={handleFinish}>
+              Finalizar compra
+            </button>
+            <button className="clear" onClick={clearCart}>
+              Vaciar carrito
+            </button>
+          </div>
         </>
       )}
       {completed && (

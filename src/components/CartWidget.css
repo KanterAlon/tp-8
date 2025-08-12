@@ -31,7 +31,8 @@
   z-index: 1000;
 }
 
-.cart-dropdown ul {
+.cart-dropdown ul,
+.cart-list {
   list-style: none;
   padding: 0;
   margin: 0 0 1rem 0;
@@ -40,7 +41,8 @@
   gap: 0.75rem;
 }
 
-.cart-dropdown li {
+.cart-dropdown li,
+.cart-list li {
   display: grid;
   grid-template-columns: 1fr auto auto auto;
   align-items: center;
@@ -48,7 +50,8 @@
   color: white;
 }
 
-.cart-dropdown li button {
+.cart-dropdown li button,
+.cart-list li button {
   color: white;
 }
 
