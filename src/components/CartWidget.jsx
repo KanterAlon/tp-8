@@ -1,17 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext.jsx'
+import CartItemList from './CartItemList.jsx'
 import './CartWidget.css'
 
 function CartWidget() {
-  const {
-    cartItems,
-    removeFromCart,
-    clearCart,
-    getTotal,
-    increaseQuantity,
-    decreaseQuantity
-  } = useCart()
+  const { cartItems, clearCart, getTotal } = useCart()
   const [open, setOpen] = useState(false)
 
   const totalFormat = new Intl.NumberFormat('es-AR', {
@@ -32,35 +26,7 @@ function CartWidget() {
             <p className="empty">Carrito vacío</p>
           ) : (
             <>
-              <ul>
-                {cartItems.map(item => (
-                  <li key={item.id}>
-                    <span className="item-title">{item.title}</span>
-                    <div className="qty-controls">
-                      <button
-                        className="qty-btn"
-                        onClick={() => decreaseQuantity(item.id)}
-                      >
-                        -
-                      </button>
-                      <span className="qty">{item.quantity}</span>
-                      <button
-                        className="qty-btn"
-                        onClick={() => increaseQuantity(item.id)}
-                      >
-                        +
-                      </button>
-                    </div>
-                    <span className="price">${item.price}</span>
-                    <button
-                      className="remove-btn"
-                      onClick={() => removeFromCart(item.id)}
-                    >
-                      ✕
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              <CartItemList />
               <p className="total">Total: {totalFormat}</p>
               <div className="cart-actions">
                 <Link className="checkout-btn add-btn" to="/checkout" onClick={() => setOpen(false)}>

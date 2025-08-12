@@ -1,38 +1,7 @@
-.checkout-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.checkout-list li {
-  display: flex;
-  justify-content: space-between;
-}
-
 .checkout-total {
   font-weight: 600;
-  margin-top: 1rem;
+  margin: 1rem 0;
   text-align: right;
-}
-
-.btn-checkout {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1rem;
-  width: 100%;
-  background: var(--color-primary);
-  border: none;
-  color: var(--color-light);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
-}
-
-.btn-checkout:hover {
-  background: var(--color-accent);
-  transform: translateY(-2px);
 }
 
 .checkout-overlay {
