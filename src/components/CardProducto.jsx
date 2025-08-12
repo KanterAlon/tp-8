@@ -15,7 +15,7 @@ function CardProducto({ producto }) {
         <Link className="btn-card" to={`/producto/${producto.id}`}>
           Ver detalle
         </Link>
-        <button className="btn-card" onClick={() => addToCart(producto)}>
+        <button className="btn-card add-btn" onClick={() => addToCart(producto)}>
           Agregar al carrito
         </button>
       </div>

@@ -163,9 +163,8 @@ header {
   transition: background var(--transition), transform var(--transition);
 }
 
-.btn-card:hover {
-  background: var(--color-accent);
-  transform: translateY(-2px);
+.btn-card {
+  border: none;
 }
 
 footer {

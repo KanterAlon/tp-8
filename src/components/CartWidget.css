@@ -45,6 +45,11 @@
   grid-template-columns: 1fr auto auto auto;
   align-items: center;
   gap: 0.5rem;
+  color: white;
+}
+
+.cart-dropdown li button {
+  color: white;
 }
 
 .item-title {
@@ -87,6 +92,7 @@
   font-weight: 600;
   text-align: right;
   margin: 0 0 1rem 0;
+  color: white;
 }
 
 .cart-actions {
@@ -95,7 +101,7 @@
   gap: 0.5rem;
 }
 
-.checkout-btn {
+.add-btn {
   display: block;
   text-align: center;
   background: var(--color-primary);
@@ -105,7 +111,7 @@
   transition: background var(--transition), transform var(--transition);
 }
 
-.checkout-btn:hover {
+.add-btn:hover {
   background: var(--color-accent);
   transform: translateY(-2px);
 }

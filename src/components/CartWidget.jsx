@@ -63,7 +63,7 @@ function CartWidget() {
               </ul>
               <p className="total">Total: {totalFormat}</p>
               <div className="cart-actions">
-                <Link className="checkout-btn" to="/checkout" onClick={() => setOpen(false)}>
+                <Link className="checkout-btn add-btn" to="/checkout" onClick={() => setOpen(false)}>
                   Ir al checkout
                 </Link>
                 <button className="clear" onClick={clearCart}>
