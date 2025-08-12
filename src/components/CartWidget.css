@@ -48,11 +48,13 @@
   align-items: center;
   gap: 0.5rem;
   color: white;
+  mix-blend-mode: difference;
 }
 
 .cart-dropdown li button,
 .cart-list li button {
   color: white;
+  mix-blend-mode: difference;
 }
 
 .item-title {
@@ -112,6 +114,7 @@
   padding: 0.5rem;
   border-radius: 8px;
   transition: background var(--transition), transform var(--transition);
+  border: none;
 }
 
 .add-btn:hover {
