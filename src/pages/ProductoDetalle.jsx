@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './ProductoDetalle.css'
+import { useCart } from '../context/CartContext.jsx'
 
 function ProductoDetalle() {
   const { idProducto } = useParams()
   const [producto, setProducto] = useState(null)
   const [loading, setLoading] = useState(true)
   const [image, setImage] = useState('')
+  const { addToCart } = useCart()
 
   useEffect(() => {
     setLoading(true)
@@ -57,7 +59,12 @@ function ProductoDetalle() {
         <p className="brand">{brand}</p>
         <p className="rating">⭐ {rating}</p>
         <p className="description">{description}</p>
-        <button className="btn btn-primary add-to-cart">Agregar al carrito</button>
+        <button
+          className="btn btn-primary add-to-cart"
+          onClick={() => addToCart(producto)}
+        >
+          Agregar al carrito
+        </button>
       </div>
     </section>
   )

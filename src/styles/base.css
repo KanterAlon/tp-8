@@ -150,6 +150,13 @@ header {
   backdrop-filter: blur(5px);
 }
 
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
   header {
   background: var(--color-primary);
   color: var(--color-light);
