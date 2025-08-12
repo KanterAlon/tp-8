@@ -1,55 +1,130 @@
 .cart-widget {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 1000;
+  position: relative;
 }
 
 .cart-button {
-  background: #333;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-light);
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
   cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.cart-button:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .cart-dropdown {
-  margin-top: 0.5rem;
-  background: #fff;
-  border: 1px solid #ccc;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: rgba(10, 10, 15, 0.95);
+  color: var(--color-light);
   padding: 1rem;
-  width: 260px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  max-width: 90vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
 }
 
 .cart-dropdown ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .cart-dropdown li {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
   align-items: center;
-  margin-bottom: 0.5rem;
+  gap: 0.5rem;
 }
 
-.cart-dropdown .total {
-  font-weight: bold;
-  margin-top: 0.5rem;
+.item-title {
+  font-size: 0.9rem;
 }
 
-.cart-dropdown .clear {
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.qty-btn {
+  background: none;
+  border: 1px solid var(--color-primary);
+  color: var(--color-light);
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.qty-btn:hover {
+  background: var(--color-primary);
+}
+
+.price {
+  font-size: 0.9rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.total {
+  font-weight: 600;
+  text-align: right;
+  margin: 0 0 1rem 0;
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkout-btn {
+  display: block;
+  text-align: center;
+  background: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.checkout-btn:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.clear {
   background: #c00;
   color: #fff;
   border: none;
   padding: 0.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  width: 100%;
+  transition: background var(--transition), transform var(--transition);
 }
 
-.cart-dropdown .empty {
+.clear:hover {
+  background: #e00;
+  transform: translateY(-2px);
+}
+
+.empty {
   margin: 0;
 }
